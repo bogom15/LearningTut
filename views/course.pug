@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    section#course-section
+        .container
+            .jumbotron-heading.mits-heading=title
+            .video-lesson-container
+                video.video(src='/videos/Java/LinuxOne.mp4' controls)
+            ul.list-group
+                each lesson in course.lessons
+                    li.list-group-item=lesson.title

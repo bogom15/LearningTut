@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    section.jumbotron.text-center.top-heading-section
+      .container
+        .jumbotron-heading.mits-heading MITS learning platform
+        p.lead.text-muted
+          | Educational content that is tailor made for your organisation
+    .py-5.bg-light.courses-section
+      .container
+        .recommended-for-you-title.text-muted
+          | recommended for you:
+        .row
+          each course in courses
+            .col-md-4
+              .card.mb-4.shadow-sm(data-coursetitle=course.title)
+                .upper-card-section
+                  .course-title
+                    =course.title
+                  img(src=course.courseImage class="card-img-top" alt="course image")
+                .card-body
+                  p.card-text
+                    =course.courseDescription
